@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial=1.0">
+    <title>LM Sheet Creator</title>
+    <style>
+    .center-heading {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>LM Sheet Creator</h1>
+        <form method="post">
+            <input type="url" placeholder="Enter URL here" name="url" required>
+            <input type="submit" class="submit-btn">
+        </form>
+    </div>
+    
+    {% if url and scraped_data %}
+    <div>
+        <h2>Ready To Print</h2>
+        {{ scraped_data | safe }}
+    </div>
+    {% endif %}
+</body>
+</html>
